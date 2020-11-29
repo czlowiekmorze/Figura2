@@ -30,7 +30,7 @@ namespace Figura
         {
             return a * a;
         }
-
+}
         class Trojkat : IFigura
         {
             protected int a, b, c;
@@ -52,7 +52,7 @@ namespace Figura
                 return 0.5 * a * h;
             }
         }
-    }
+    
     class Program
     {
         static void Main(string[] args)
@@ -60,7 +60,7 @@ namespace Figura
             Kwadrat k1 = new Kwadrat(15);
             Console.WriteLine("obwód =" + k1.obwod + "Pole = " + k1.Pole());
 
-            Trojkat.t1 = new Trojkat(4, 4, 4, 5);
+            Trojkat t1 = new Trojkat(4, 4, 4, 5);
 
             Console.ReadKey();
         }
