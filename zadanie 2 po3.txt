@@ -1,0 +1,68 @@
+using System;
+
+namespace Figura
+{
+    interface IFigura
+    {
+        double obwod
+        {
+            get;
+        }
+        double Pole();
+    }
+
+    class Kwadrat : IFigura
+    {
+        protected int a;
+        public Kwadrat( int bok)
+        {
+            a = bok;
+        }
+        public double obwod
+        {
+
+            get
+            {
+                return 4 * a;
+            }
+        }
+        public double Pole()
+        {
+            return a * a;
+        }
+
+        class Trojkat : IFigura
+        {
+            protected int a, b, c;
+            protected int h;
+
+            public Trojkat(int bok_a, int bok_b, int bok_c, int wysokosc)
+            {
+                a = bok_a;b = bok_b;c = bok_c;h = wysokosc;
+            }
+            public double obwod
+            {
+                get
+                {
+                    return a + b + c;
+                }
+            }
+            public double Pole()
+            {
+                return 0.5 * a * h;
+            }
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Kwadrat k1 = new Kwadrat(15);
+            Console.WriteLine("obwód =" + k1.obwod + "Pole = " + k1.Pole());
+
+            Trojkat.t1 = new Trojkat(4, 4, 4, 5);
+
+            Console.ReadKey();
+        }
+    }
+}
